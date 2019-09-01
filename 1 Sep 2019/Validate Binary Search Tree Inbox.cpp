@@ -17,7 +17,7 @@ class node
     } 
 }; 
 
-int is_bst_helper(node* node, int min, int max)  {  
+bool is_bst_helper(node* node, int min, int max)  {  
     if (node==NULL)  
         return 1;  
     if (node->data < min || node->data > max)  
@@ -27,7 +27,7 @@ int is_bst_helper(node* node, int min, int max)  {
         is_bst_helper(node->right, node->data+1, max);  
 } 
   
-int is_bst(node* node)  {  
+bool is_bst(node* node)  {  
     return is_bst_helper(node, INT_MIN, INT_MAX);  
 }
 
